@@ -84,12 +84,12 @@ const handleTouchMovement = (eve) => {
     if (Math.abs(diffX) > Math.abs(diffY)) {
         if (diffX > 0) {
             if (velocityX !== 1) {
-                velocityX = 1;
+                velocityX = -1;
                 velocityY = 0;
             }
         } else {
             if (velocityX !== -1) {
-                velocityX = -1;
+                velocityX = 1;
                 velocityY = 0;
             }
         }
@@ -97,12 +97,12 @@ const handleTouchMovement = (eve) => {
         if (diffY > 0) {
             if (velocityY !== 1) {
                 velocityX = 0;
-                velocityY = 1;
+                velocityY = -1;
             }
         } else {
             if (velocityY !== -1) {
                 velocityX = 0;
-                velocityY = -1;
+                velocityY = 1;
             }
         }
     }
