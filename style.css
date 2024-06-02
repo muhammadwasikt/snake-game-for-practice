@@ -58,7 +58,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: none;
 }
-.control{
+/* .control{
     max-width: 500px;
     width: 100%;
     display: flex;
@@ -87,9 +87,10 @@ body{
     position: absolute; 
     display: flex;
     column-gap: 60px;
-}
+} */
 @media only screen and (min-width:500px) {
-    .control{
+    
+    /* .control{
      display: none;
-    }
+    } */
 }

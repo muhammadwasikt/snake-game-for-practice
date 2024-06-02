@@ -62,10 +62,53 @@ function gameControl(e) {
             break;
     }
 }
+let touchStartX = 0;
+let touchStartY = 0;
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => gameControl({ key: button.dataset.key }));
-});
+const touchMovement = (eve) => {
+    const firstTouch = eve.touches[0];
+    touchStartX =firstTouch.clientX;
+    touchStartY = firstTouch.clientY;
+}
+const handleTouchMovement = (eve) => {
+    if (!touchStartX || !touchStartY) {
+        return;
+    }
+
+    let touchEndX = eve.touches[0].clientX;
+    let touchEndY = eve.touches[0].clientY;
+
+    let diffX = touchStartX - touchEndX;
+    let diffY = touchStartY - touchEndY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) {
+            if (velocityX !== 1) {
+                velocityX = -1;
+                velocityY = 0;
+            }
+        } else {
+            if (velocityX !== -1) {
+                velocityX = 1;
+                velocityY = 0;
+            }
+        }
+    } else {
+        if (diffY > 0) {
+            if (velocityY !== 1) {
+                velocityX = 0;
+                velocityY = -1;
+            }
+        } else {
+            if (velocityY !== -1) {
+                velocityX = 0;
+                velocityY = 1;
+            }
+        }
+    }
+    touchStartX = 0;
+    touchStartY = 0;
+}
 
 function gameRun() {
     if (gameOver) {
@@ -73,8 +116,6 @@ function gameRun() {
     };
     
     let foodElement = `<div class='food' style='grid-area: ${foodY} / ${foodX};'></div>`;
-    
-    // Check if snake has eaten the food
     if (snakeX === foodX && snakeY === foodY) {
         placeFood();
         snake.push([snakeX, snakeY]); 
@@ -105,25 +146,22 @@ function gameRun() {
     canvas.innerHTML = foodElement + snakeElements;
 }
 
-var slow;
+var slow = 150;
 
-document.getElementById('slow').addEventListener('click',() => {
-        slow = 300
-       gameMod.style.display= 'none'        
- setIntervalId = setInterval(gameRun, slow);
-    })
-document.getElementById('normal').addEventListener('click',() => {
-        slow = 149
-       gameMod.style.display= 'none'
-       setIntervalI = setInterval(gameRun, slow);
-})
-document.getElementById('fast').addEventListener('click',() => {
-            slow = 50
-            gameMod.style.display= 'none'    
-setInterval = setInterval(gameRun, slow);
-        
-    })
-placeFood();
-gameRun()
+// document.getElementById('slow').addEventListener('click',() => {
+//     gameMod.style.display= 'none'        
+//     return slow++
+//     })
+//     document.getElementById('normal').addEventListener('click',() => {
+//         gameMod.style.display= 'none'
+//         return slow = 149
+//     })
+//     document.getElementById('fast').addEventListener('click',() => {
+//         gameMod.style.display= 'none'            
+//         return slow = 50
+//     })
+    placeFood();
+    setIntervalId = setInterval(gameRun, slow);
 document.addEventListener('keydown', gameControl);
-console.log(slow)
+document.addEventListener('touchstart', handleTouchMovement);
+document.addEventListener('touchmove', touchMovement);
