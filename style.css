@@ -10,6 +10,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .canvas{
     max-width: 500px;
@@ -88,7 +89,7 @@ body{
     display: flex;
     column-gap: 60px;
 } */
-@media only screen and (min-width:500px) {
+@media only screen and (max-width:500px) {
     .canvas{
         max-width: 100%;
     }

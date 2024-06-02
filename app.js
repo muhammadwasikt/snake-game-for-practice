@@ -75,8 +75,8 @@ const handleTouchMovement = (eve) => {
         return;
     }
 
-    let touchEndX = eve.touches[0].clientX;
-    let touchEndY = eve.touches[0].clientY;
+    let touchEndX = eve.changedTouches[0].clientX;
+    let touchEndY = eve.changedTouches[0].clientY;
 
     let diffX = touchStartX - touchEndX;
     let diffY = touchStartY - touchEndY;
@@ -163,5 +163,5 @@ var slow = 150;
     placeFood();
     setIntervalId = setInterval(gameRun, slow);
 document.addEventListener('keydown', gameControl);
-document.addEventListener('touchstart', handleTouchMovement);
 document.addEventListener('touchmove', touchMovement);
+document.addEventListener('touchstart', handleTouchMovement);
