@@ -89,7 +89,9 @@ body{
     column-gap: 60px;
 } */
 @media only screen and (min-width:500px) {
-    
+    .canvas{
+        max-width: 100%;
+    }
     /* .control{
      display: none;
     } */
