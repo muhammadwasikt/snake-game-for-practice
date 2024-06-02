@@ -58,3 +58,38 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: none;
 }
+.control{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.control button{
+    padding: 8px;
+    font-size: larger;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(245, 194, 128);
+    color: rgb(240, 228, 214);
+    box-shadow: 1px 2px 1px 2px rgb(235, 177, 101);
+}
+.control button:active{
+    box-shadow: 0px 0px 0px 0px;
+    transform: translateY(1px);
+}
+.cont{
+    display: grid;
+    row-gap: 80px;
+}
+.con{
+    position: absolute; 
+    display: flex;
+    column-gap: 60px;
+}
+@media only screen and (min-width:500px) {
+    .control{
+     display: none;
+    }
+}

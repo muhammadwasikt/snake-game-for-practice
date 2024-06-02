@@ -111,20 +111,15 @@ document.getElementById('slow').addEventListener('click',() => {
         slow = 300
        gameMod.style.display= 'none'        
  setIntervalId = setInterval(gameRun, slow);
-    
     })
 document.getElementById('normal').addEventListener('click',() => {
         slow = 149
        gameMod.style.display= 'none'
-clearInterval(setIntervalId)
        setIntervalI = setInterval(gameRun, slow);
-
 })
 document.getElementById('fast').addEventListener('click',() => {
             slow = 50
             gameMod.style.display= 'none'    
-        clearInterval(setIntervalId)
-        clearInterval()
 setInterval = setInterval(gameRun, slow);
         
     })
