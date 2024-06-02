@@ -1,0 +1,60 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.canvas{
+    max-width: 500px;
+    width: 100%;
+    height: 500px;
+    background-image: url(./Green\ Grass.jpg);
+    background-size: cover;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template: repeat(30, 1fr)/repeat(30, 1fr);
+
+}
+.score{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(./Green\ Grass.jpg);
+    background-size: cover;
+    object-fit: contain;
+    padding: 10px 20px;
+}
+.snake{
+    background-color: greenyellow;
+}
+.snake-head{
+
+    border-radius: 20px 20px 0px 0px;
+}
+.food{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: coral;
+}
+#game-mode{
+    cursor: pointer;
+}
+#game-mod{
+    width: 100px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: none;
+}

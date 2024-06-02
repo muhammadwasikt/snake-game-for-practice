@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="score">
+        <h4 id="game-mode">Game Mode</h4>
+            <div id='game-mod'>
+                <button class="mode" id="slow">Slow</button>
+                <button class="mode" id="normal">Normal</button>
+                <button class="mode" id="fast">Fast</button>
+            </div>
+        <h4>Score: <span id="score">00</span></h4>
+        <h4>Hi Score: <span id="hi-score">00</span></h4>
+    </div>
+    <div class="canvas" id="canvas"></div>
+    <div class="control">
+        <button data-key="ArrowUp">Up</button>
+        <button data-key="ArrowDown">Down</button>
+        <button data-key="ArrowLeft">Left</button>
+        <button data-key="ArrowRight">Right</button>
+    </div>
+</body>
+</html>
