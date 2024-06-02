@@ -163,5 +163,5 @@ var slow = 150;
     placeFood();
     setIntervalId = setInterval(gameRun, slow);
 document.addEventListener('keydown', gameControl);
-document.addEventListener('touchmove', touchMovement);
-document.addEventListener('touchstart', handleTouchMovement);
+document.addEventListener('touchstart', touchMovement);
+document.addEventListener('touchmove', handleTouchMovement);
