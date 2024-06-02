@@ -147,21 +147,25 @@ function gameRun() {
 }
 
 var slow = 150;
-
-// document.getElementById('slow').addEventListener('click',() => {
-//     gameMod.style.display= 'none'        
-//     return slow++
-//     })
-//     document.getElementById('normal').addEventListener('click',() => {
-//         gameMod.style.display= 'none'
-//         return slow = 149
-//     })
-//     document.getElementById('fast').addEventListener('click',() => {
-//         gameMod.style.display= 'none'            
-//         return slow = 50
-//     })
+function speed(newSpeed) {
+    clearInterval(setIntervalId)
+    slow = newSpeed
+    setIntervalId= setInterval(gameRun,slow)
+}
+document.getElementById('slow').addEventListener('click',() => {
+    gameMod.style.display= 'none'        
+    speed(300)
+    })
+    document.getElementById('normal').addEventListener('click',() => {
+        gameMod.style.display= 'none'
+       speed(149)
+    })
+    document.getElementById('fast').addEventListener('click',() => {
+        gameMod.style.display= 'none'            
+       speed(60)
+    })
     placeFood();
-    setIntervalId = setInterval(gameRun, slow);
+    setIntervalId= setInterval(gameRun,slow)
 document.addEventListener('keydown', gameControl);
 document.addEventListener('touchstart', touchMovement);
 document.addEventListener('touchmove', handleTouchMovement);
