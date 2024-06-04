@@ -140,13 +140,13 @@ function gameRun() {
         }
     }
     let snakeElements = snake.map(segment => {
-        return `<div class="snake" style="grid-area: ${segment[1]} / ${segment[0]}"></div>`;
+            return `<div class="snake-head" style="grid-area: ${segment[1]} / ${segment[0]}"></div>`;
     }).join('');
     
     canvas.innerHTML = foodElement + snakeElements;
 }
 
-var slow = 150;
+var slow = 170;
 function speed(newSpeed) {
     clearInterval(setIntervalId)
     slow = newSpeed
@@ -158,11 +158,11 @@ document.getElementById('slow').addEventListener('click',() => {
     })
     document.getElementById('normal').addEventListener('click',() => {
         gameMod.style.display= 'none'
-       speed(149)
+       speed(155)
     })
     document.getElementById('fast').addEventListener('click',() => {
         gameMod.style.display= 'none'            
-       speed(60)
+       speed(70)
     })
     placeFood();
     setIntervalId= setInterval(gameRun,slow)

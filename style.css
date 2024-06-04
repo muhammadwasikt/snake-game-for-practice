@@ -34,19 +34,15 @@ body{
     object-fit: contain;
     padding: 10px 20px;
 }
-.snake{
-    background-color: greenyellow;
-}
-.snake-head{
 
-    border-radius: 20px 20px 0px 0px;
-}
-.food{
+.snake-head{
     width: 15px;
     height: 15px;
-    border-radius: 50%;
-    background-color: coral;
+    border-radius: 30%;
+    background-color: greenyellow;
+
 }
+
 #game-mode{
     cursor: pointer;
 }
