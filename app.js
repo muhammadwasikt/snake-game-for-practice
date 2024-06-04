@@ -13,16 +13,17 @@ gameMode.addEventListener('click',() => {
 let gameOver = false;
     let setIntervalId;
     let foodX, foodY;
+    let foodAr = ['🥞','🧇','🧀','🎂','🍰',"🍒",'🥦',"🍏",'🍈','🍊',"🥝"];
+    let foodArr = foodAr[Math.floor(Math.random()*foodAr.length)].toString()
     let snakeX = 10;
     let snakeY = 12;
-let velocityX = 0;
-let velocityY = 0; 
-let snake = [[10, 12]];
-let score = 0;
-let highScore = localStorage.getItem("high-score") || 0;
-
-hiScoreElement.innerText = highScore.toString().padStart(2, '0');
-
+    let velocityX = 0;
+    let velocityY = 0; 
+    let snake = [[10, 12]];
+    let score = 0;
+    let highScore = localStorage.getItem("high-score") || 0;
+    
+    hiScoreElement.innerText = highScore.toString().padStart(2, '0');
 function placeFood() {
     foodX = Math.floor(Math.random() * 30) + 1;
     foodY = Math.floor(Math.random() * 30) + 1;
@@ -80,7 +81,6 @@ const handleTouchMovement = (eve) => {
 
     let diffX = touchStartX - touchEndX;
     let diffY = touchStartY - touchEndY;
-
     if (Math.abs(diffX) > Math.abs(diffY)) {
         if (diffX > 0) {
             if (velocityX !== 1) {
@@ -109,14 +109,14 @@ const handleTouchMovement = (eve) => {
     touchStartX = 0;
     touchStartY = 0;
 }
-
 function gameRun() {
     if (gameOver) {
         return handleGameOver()
     };
     
-    let foodElement = `<div class='food' style='grid-area: ${foodY} / ${foodX};'></div>`;
+    let foodElement = `<div style='grid-area: ${foodY} / ${foodX};'>${foodArr}</div>`;
     if (snakeX === foodX && snakeY === foodY) {
+        foodArr= foodAr[Math.floor(Math.random()*foodAr.length)]
         placeFood();
         snake.push([snakeX, snakeY]); 
         score++;
