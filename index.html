@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="app.js"></script>
 </head>
 <body>
@@ -30,5 +29,19 @@
         <button id="butt" data-key="ArrowRight"><i class="fa fa-arrow-right"></i></button>
     </div>
     </div> -->
+    <script>
+     if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+        .then(res =>{
+            console.info("SW Registered");
+        })
+        .catch(err =>{
+            console.error('Error in Registring SW', err)
+        })
+    }else{
+        console.log('SW not supported')
+    }   
+    </script>
+
 </body>
 </html>

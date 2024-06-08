@@ -142,8 +142,8 @@ function gameRun() {
     let snakeElements = snake.map(segment => {
             return `<div class="snake-head" style="grid-area: ${segment[1]} / ${segment[0]}"></div>`;
     }).join('');
-    
-    canvas.innerHTML = foodElement + snakeElements;
+
+    canvas.innerHTML = foodElement + snakeElements ;
 }
 
 var slow = 170;

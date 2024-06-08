@@ -36,12 +36,10 @@ body{
 }
 
 .snake-head{
-    width: 15px;
-    height: 15px;
-    border-radius: 30%;
     background-color: greenyellow;
 
 }
+
 
 #game-mode{
     cursor: pointer;
