@@ -85,9 +85,9 @@ margin-top: 30px;
         justify-content: start;
     align-items: start;
     }
-    /* .canvas{
-        height: 90vh;
-    } */
+    .canvas{
+        height: 80%;
+    }
     /* .control{
      display: none;
     } */
