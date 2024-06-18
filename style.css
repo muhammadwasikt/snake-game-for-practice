@@ -86,9 +86,12 @@ margin-top: 30px;
     align-items: start;
     }
     .canvas{
-        height: 93vh;
+        height: 90vh;
     }
     /* .control{
      display: none;
     } */
+    .score{
+        padding: 10px 10px;
+    }
 }
