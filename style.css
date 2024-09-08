@@ -2,6 +2,7 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
     width: 100%;
@@ -12,17 +13,21 @@ body{
     align-items: center;
     overflow: hidden;
     background-image: url(./Green\ Grass.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
-    object-fit: contain;
+    background-position: 100%;
 }
 .canvas{
+    max-width: 450px;
     width: 100%;
-    height: 95vh;
-    object-fit: contain;
+    max-height: 70vh;
+    height: 100%;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNyCB3CuYfo38cqBv3FrCtKx10XDfUaI8nzQ&s);
     background-repeat: no-repeat;
+    background-size: cover;
     display: grid;
     grid-template: repeat(30, 1fr)/repeat(30, 1fr);
-margin-top: 30px;
+border: 1px solid rgb(21, 238, 21);
 }
 .score{
     width: 100%;
@@ -34,21 +39,38 @@ margin-top: 30px;
 }
 
 .snake-head{
-    background-color: greenyellow;
+    width: 100%;
+    border-radius: 50%;
+    background-color: rgb(220, 243, 9);
 }
 
 
 #game-mode{
     cursor: pointer;
 }
-#game-mod{
+.game-mo{
+    display: none;
+}
+.game-mod{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     width: 100px;
-    padding: 5px 10px;
-    margin-top: 20px;
-    background-color: antiquewhite;
+    padding: 5px 10px 5px 0px;
+    margin-top: 40px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNyCB3CuYfo38cqBv3FrCtKx10XDfUaI8nzQ&s);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: none;
+}
+.game-mod button{
+    padding: 2px;
+    text-align: left;
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.281);
+    cursor: pointer;
 }
 /* .control{
     max-width: 500px;
@@ -80,13 +102,16 @@ margin-top: 30px;
     display: flex;
     column-gap: 60px;
 } */
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:1430px) {
     body{
-        justify-content: start;
-    align-items: start;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNyCB3CuYfo38cqBv3FrCtKx10XDfUaI8nzQ&s);
+        padding: 0px 10px;
     }
-    .canvas{
-        height: 85%;
+}
+@media only screen and (max-width:500px) {
+       .canvas{
+        width: 100%;
+        height: 100%;
     }
     /* .control{
      display: none;

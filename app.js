@@ -6,14 +6,14 @@ let gameMode = document.getElementById('game-mode')
 let gameMod = document.getElementById('game-mod')
 
 gameMode.addEventListener('click',() => {
-   gameMod.style.display= 'block'
+   gameMod.classList.toggle('game-mod')
 })
 
 
 let gameOver = false;
     let setIntervalId;
     let foodX, foodY;
-    let foodAr = ['🥞','🧇','🧀','🎂','🍰',"🍒",'🥦',"🍏",'🍈','🍊',"🥝"];
+    let foodAr = ['🥞','🧀','🎂','🍰',"🍒",'🥦',"🍏",'🍈','🍊',"🥝"];
     let foodArr = foodAr[Math.floor(Math.random()*foodAr.length)].toString()
     let snakeX = 10;
     let snakeY = 12;
@@ -154,15 +154,15 @@ function speed(newSpeed) {
     setIntervalId= setInterval(gameRun,slow)
 }
 document.getElementById('slow').addEventListener('click',() => {
-    gameMod.style.display= 'none'        
+    gameMod.classList.remove('game-mod')        
     speed(300)
     })
     document.getElementById('normal').addEventListener('click',() => {
-        gameMod.style.display= 'none'
+        gameMod.classList.remove('game-mod')
        speed(155)
     })
     document.getElementById('fast').addEventListener('click',() => {
-        gameMod.style.display= 'none'            
+        gameMod.classList.remove('game-mod')            
        speed(70)
     })
     placeFood();
